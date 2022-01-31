@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey</title>
+</head>
+
+<body>
+    <form>
+        <Fieldset>
+            <legend>
+                Customer Experience Survey
+            </legend>
+            <label for="storeNumber">Store Number</label>
+            <select name="storeNumber" id="storeNumber">
+                <option value="hidden">Select A Store</option>
+                <option value="3109">3109</option>
+                <option value="3111">3111</option>
+                <option value="3121">3121</option>
+            </select>
+            <div>
+                <fieldset>
+                    <legend>When you visited:</legend>
+                    <label for="date">Date Visited</label>
+                    <!-- Adding the "min" an "max" attributes will limit the dat selection to a specific range -->
+                    <input type="date" id="date" min="2022-01-01" max="2022-12-31">
+                    <br>
+                    <label for="time">Time</label>
+                    <input type="time" id="time" name="time">
+                </fieldset>
+            </div>
+            <label for="fullName">Full Name</label>
+            <input type="text" name="name" id="fullName" placeholder="Name">
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" placeholder="Email">
+            <br>
+            <fieldset>
+                <legend>How would you rate your level of satisfaction with your visit?</legend>
+                <input type="radio" name="sl" id="Satisfied">
+                <label for="satisfied">Satisfied</label>
+                <br>
+                <!-- Adding "checked" attribute will cause the radio input to be selected by default when page first loads -->
+                <input type="radio" name="sl" id="neither" checked>
+                <label for="neither">Neither Satisfied nor Dissastisfied</label>
+                <br>
+                <input type="radio" name="sl" id="Dissatisfied">
+                <label for="Dissatisfied">Dissatisfied</label>
+
+            </fieldset>
+            <label for="experience">Tell us about your experience:</label>
+            <br>
+            <textarea name="experience" id="experience" cols="20" rows="2"></textarea>
+            <br>
+            <label for="times">Times visited in the last month:</label>
+            <br>
+            <!-- Adding the "min" and "max" attributes will limit the number selection to a specific range. -->
+            <input type="number" name="times" id="times" min="1" max="30">
+            <br>
+            <!-- Adding the "required" attribute will NOT allow the user to submit the form unless the form element is completed (the checkbox being checked in this case).-->
+            <input type="checkbox" name="contact" id="contact" required>
+            <label for="contact">Please check the box if you would be willing to be contacted about your
+                experience</label>
+            <br>
+            <label for="password">Password</label>
+            <!-- Using the pattern attribute allows for a required min and max length to be set for the input. Also, the title attribute allows for a message to be displayed when the user does NOT meet the requirements. -->
+            <input type="password" name="password" id="password" pattern=".{5,10)" title="Please enter a password that is 5 ro 10 characters in length">
+            <br>
+            <!-- A "reset" input clears out all the values entered/selected in a form. -->
+            <input type="reset">
+            <input type="submit">
+        </Fieldset>
+    </form>
+</body>
+</html>
